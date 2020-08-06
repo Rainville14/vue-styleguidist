@@ -1,7 +1,7 @@
 import * as path from 'path'
+import nodeResolve from '@rollup/plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript2'
-import commonjs from 'rollup-plugin-commonjs'
-import resolveNode from 'rollup-plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
 import pkg from './package.json'
 
 const resolve = _path => path.resolve(__dirname, _path)
@@ -20,7 +20,7 @@ export default {
 		}
 	],
 	plugins: [
-		resolveNode(),
+		nodeResolve(),
 		// Compile TypeScript files
 		typescript({
 			useTsconfigDeclarationDir: true,
